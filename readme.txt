@@ -15,8 +15,8 @@ Sometimes you want to force users to download files from a link without having t
 This plugin introduces the [download] shortcode that wraps links in your content and does just that. 
 
 Two things:
-*   You **MUST** manually upload force-download.php into your wp-content directory.
-*   Files **MUST** be uploaded via the WordPress uploader for the shortcode to work.
+1. You **MUST** manually upload force-download.php into your wp-content directory.
+2. Files **MUST** be uploaded via the WordPress uploader for the shortcode to work.
 
 The shortcode can be used in multiple ways:
 
@@ -41,7 +41,7 @@ Currently, this plugin can force downloads for pdf, mp4, mp3, gif, png, jpg and 
 
 You probably didn't manually upload the force-downloads.php script to your site's wp-content directory.
 
-= How can I style download links differently?
+= How can I style download links differently? =
 
 There is a built-in filter hook you can use to add a class to the link tags the shortcode produces, `ww_download_class`.
 
