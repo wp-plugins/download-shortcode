@@ -1,12 +1,12 @@
 <?php
-/*
-Plugin Name: Force Download Shortcode
-Plugin URI: http://www.werdswords.com
-Description: Allows you to wrap file links in a shortcode that will force a download when clicked
-Author: Drew Jaynes
-Author URI: http://www.drewapicture.com
-Version: 0.1
-*/
+/**
+ * Plugin Name: Force Download Shortcode
+ * Plugin URI: http://www.werdswords.com
+ * Description: Allows you to wrap uploaded file links in a shortcode that will force a download when clicked
+ * Author: Drew Jaynes (DrewAPicture)
+ * Author URI: http://www.werdswords.com
+ * Version: 0.2
+ */
 
 class Download_Shortcode {
 	
