@@ -24,7 +24,7 @@ The shortcode can be used in multiple ways:
 
 `[download]http://example.com/wp-content/uploads/my_song.mp3[/download]` would show as a link titled `http://example.com/wp-content/uploads/my_song.mp3`
 
-If you wanted to use this in a php file, you could call something like `<?php do_shortcode( '[download label="My Label"]http://myuploadedfile.mp3[/download]' ); ?>`
+If you wanted to use this in a php file, you could call something like `<?php do_shortcode( '[download label="My Label"]http://example.com/wp-content/uploads/my_song.mp3[/download]' ); ?>`
 
 == Installation ==
 
