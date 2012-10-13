@@ -1,13 +1,22 @@
 <?php
-/*
-Author: Louai Munajim
-Source: http://elouai.com/force-download.php
-Contributors: Jorg Weske, Rajkumar Singh
-*/
+/**
+ * This script forces download on the specified file-types.
+ * It was been slightly modified to provide more security from
+ * unauthorized files such as those with a .php extension being
+ * downloaded, or force-download.php itself being exposed.
+ *
+ * Original Author: Louai Munajim
+ * Source: http://elouai.com/force-download.php
+ * Contributors: Jorg Weske, Rajkumar Singh, Drew Jaynes
+ */
 
 $filename = $_GET['file'];
 
-if ( $filename == "" || !file_exists( $filename ) )
+// Check for empty value or shenanigans
+if ( $filename == "" || 
+	strpos( $filename, '.php' ) || 
+	strlen( $filename <= 3 ) || 
+	! file_exists( $filename ) )
   exit;
 
 // required for IE, otherwise Content-disposition is ignored
