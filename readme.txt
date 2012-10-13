@@ -4,7 +4,7 @@ Donate link: http://www.werdswords.com
 Tags: downloads, shortcode, force download
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 0.2
+Stable tag: 0.2.1
 License: GPLv2
 
 Allows you to wrap file links in a shortcode that will force a download when clicked
@@ -29,7 +29,8 @@ If you wanted to use this in a php file, you could call something like `<?php do
 == Installation ==
 
 1. Upload the entire `download-shortcode` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+2. Move/upload the 'force-download.php' file to your wp-content directory.
+3. Activate the plugin through the 'Plugins' menu in the Dashboard.
 
 == Frequently Asked Questions ==
 
