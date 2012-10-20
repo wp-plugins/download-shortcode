@@ -4,12 +4,14 @@ Donate link: http://www.werdswords.com
 Tags: downloads, shortcode, force download
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 0.2.1
+Stable tag: 0.2.3
 License: GPLv2
 
 Allows you to wrap file links in a shortcode that will force a download when clicked
 
 == Description ==
+
+**PLEASE NOTE:** For those of you who were experiencing white screen issues wit h0.2 or 0.2.1, you'll need to replace the old force-download.php file in wp-content with the new one in version 0.2.2!
 
 Sometimes you want to force users to download files from a link without having those files opened by the browser.
 This plugin introduces the [download] shortcode that wraps links in your content and does just that. 
@@ -49,8 +51,9 @@ There is a built-in filter hook you can use to add a class to the link tags the 
 This example filter adds the 'downloads' class:
 
 `
-function filter_download_links() {
-	return 'downloads';
+function filter_download_links( $class ) {
+	$class = 'downloads';
+	return $class;
 }
 add_filter( 'ww_download_class', 'filter_download_links' );
 `
@@ -61,11 +64,17 @@ add_filter( 'ww_download_class', 'filter_download_links' );
 
 = 0.2 = Fix security vulnerability which exposed php core files to direct download, docblocking and other tweaks. 
 
+= 0.2.2 = Remove faulty strlen check on filenames in force-download.php. Fixes WSOD issues.
+
+= 0.2.3 = Update readme.txt with note about replacing force-download.php in wp-content with the new one
+
 == Upgrade Notice ==
 
 = 0.1 = Initial submission
 
 = 0.2 = Security Fix
+
+= 0.2.3 = Make sure you replace force-download.php in your wp-content folder with the new version!
 
 == Screenshots ==
 

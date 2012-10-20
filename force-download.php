@@ -13,10 +13,9 @@
 $filename = $_GET['file'];
 
 // Check for empty value or shenanigans
-if ( $filename == "" || 
-	strpos( $filename, '.php' ) || 
-	strlen( $filename <= 3 ) || 
-	! file_exists( $filename ) )
+if ( $filename == ""
+	|| strpos( $filename, '.php' ) 
+	|| ! file_exists( $filename ) )
   exit;
 
 // required for IE, otherwise Content-disposition is ignored
