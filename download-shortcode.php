@@ -5,7 +5,7 @@
  * Description: Allows you to wrap uploaded file links in a shortcode that will force a download when clicked
  * Author: Drew Jaynes (DrewAPicture)
  * Author URI: http://www.werdswords.com
- * Version: 0.2.1
+ * Version: 0.2.2
  */
 
 class Download_Shortcode {

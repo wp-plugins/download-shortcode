@@ -4,7 +4,7 @@ Donate link: http://www.werdswords.com
 Tags: downloads, shortcode, force download
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 License: GPLv2
 
 Allows you to wrap file links in a shortcode that will force a download when clicked
@@ -60,6 +60,8 @@ add_filter( 'ww_download_class', 'filter_download_links' );
 = 0.1 = First version
 
 = 0.2 = Fix security vulnerability which exposed php core files to direct download, docblocking and other tweaks. 
+
+= 0.2.2 = Remove faulty strlen check on filenames in force-download.php. Fixes WSOD issues.
 
 == Upgrade Notice ==
 
