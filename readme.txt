@@ -11,7 +11,7 @@ Allows you to wrap file links in a shortcode that will force a download when cli
 
 == Description ==
 
-**PLEASE NOTE:** For those of you who were experiencing white screen issues wit h0.2 or 0.2.1, you'll need to replace the old force-download.php file in wp-content with the new one in version 0.2.2!
+**PLEASE NOTE:** For those of you who were experiencing white screen issues with 0.2 or 0.2.1, you'll need to replace the old force-download.php file in wp-content with the new one in version 0.2.3!
 
 Sometimes you want to force users to download files from a link without having those files opened by the browser.
 This plugin introduces the [download] shortcode that wraps links in your content and does just that. 
