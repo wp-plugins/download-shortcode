@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * This script forces download on the specified file-types.
  * It was been slightly modified to provide more security from
@@ -8,15 +8,25 @@
  * Original Author: Louai Munajim
  * Source: http://elouai.com/force-download.php
  * Contributors: Jorg Weske, Rajkumar Singh, Drew Jaynes
+ *
+ * @since 0.1
  */
 
 $filename = $_GET['file'];
 
 // Check for empty value or shenanigans
-if ( $filename == ""
-	|| strpos( $filename, '.php' ) 
-	|| ! file_exists( $filename ) )
-  exit;
+if (
+ 	// From validate_file() in WP core
+		false !== strpos( $filename, '..' )
+		|| false !== strpos( $filename, './' )
+		|| ':' == substr( $filename, 1, 1 )
+	// Empty path
+		|| $filename == ""
+	// Doesn't exist
+		|| ! file_exists( $filename )
+	// Is a PHP file
+		|| strpos( $filename, '.php' ) )
+	exit();
 
 // required for IE, otherwise Content-disposition is ignored
 if ( ini_get( 'zlib.output_compression' ) )
