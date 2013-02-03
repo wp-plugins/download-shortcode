@@ -5,7 +5,7 @@
  * Description: Allows you to wrap uploaded file links in a shortcode that will force a download when clicked
  * Author: Drew Jaynes (DrewAPicture)
  * Author URI: http://www.werdswords.com
- * Version: 1.0
+ * Version: 1.1
  */
 
 define( 'FDS_VERSION', '1.0' );
@@ -193,6 +193,22 @@ class Download_Shortcode {
 	}
 
 	/**
+	 * WordPress in a subdirectory
+	 * 
+	 * If WordPress is installed in a subdirectory, we need to grab the path following the root domain 
+	 * to be able to prepend it when we rewrite the URL.
+	 *
+	 * @since 1.1
+	 *
+	 * @return string The subdirectory path of the WordPress root with a trailing slash
+	 */
+	function optional_subdir() {
+		if ( site_url() != home_url() ) {
+			return str_replace( home_url( '/' ), '', site_url( '/' ) );
+		}
+	}
+	 
+	/**
 	 * Rewrite Link Path
 	 *
 	 * This serves a dual purpose:
@@ -207,7 +223,10 @@ class Download_Shortcode {
 	 * @return null
 	 */
 	function rewrite_urls( $wp_rewrite ) {
-		$wp_rewrite->add_external_rule( sprintf( '%s/(.+)$', $this->download_path() ), sprintf( 'wp-content/force-download.php?file=%s/$1', $this->uploads_path() ) );
+		$wp_rewrite->add_external_rule( 
+			sprintf( '%s/(.+)$', $this->download_path() ),
+			sprintf( '%1$swp-content/force-download.php?file=%2$s/$1', $this->optional_subdir(), $this->uploads_path() )
+		);
 	}
 	
 	/**

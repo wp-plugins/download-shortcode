@@ -3,8 +3,8 @@ Contributors: DrewAPicture
 Donate link: http://www.werdswords.com
 Tags: downloads, shortcode, force download
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 1.0
+Tested up to: 3.5.1
+Stable tag: 1.1
 License: GPLv2
 
 Allows you to wrap file links in a shortcode that will force a download when clicked.
@@ -144,6 +144,12 @@ add_filter( 'fds_download_rewrite_path', 'change_download_rewrite_path' );
 
 == Changelog ==
 
+= 1.1 =
+
+* Add support for WordPress in a subdirectory
+* Regenerate pot file to include translatable strings
+* TODO: Add Multisite upload directory support
+
 = 1.0 =
 
 * Complete plugin rewrite
@@ -177,9 +183,16 @@ add_filter( 'fds_download_rewrite_path', 'change_download_rewrite_path' );
 
 == Upgrade Notice ==
 
+= 1.1 =
+
+* Add support for WordPress in a subdirectory
+* Regenerate pot file to include translatable strings
+
 = 1.0 =
 
-* Adds URL rewriting, more robust security and additional filters for advanced customizations.
+* Adds URL rewriting
+* Adds more robust security
+* Add additional filters for advanced customizations
 
 = 0.2.3 =
 
